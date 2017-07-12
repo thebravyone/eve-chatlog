@@ -12,6 +12,10 @@ module.exports = (filename, opts) => {
 		offset: 0
 	}, opts);
 
+	if (!Number.isInteger(opts.offset)) {
+		throw new TypeError(`Expected offset as integer, got ${typeof filename}`);
+	}
+
 	const fillPattern = (array, pattern) => {
 		for (let i = 0, j = 0; i < array.length; i++, j++) {
 			if (j >= pattern.length) {
@@ -62,7 +66,12 @@ module.exports = (filename, opts) => {
 	const headerBoundary = Buffer.from(fillPattern(new Array(126), [0x00, 0x2D]));
 
 	// Load Log file into buffer
-	const buff = fs.readFileSync(filename);
+	let buff;
+	try {
+		buff = fs.readFileSync(filename);
+	} catch (err) {
+		throw new TypeError(err.message);
+	}
 
 	// Check magic number
 	if (buff.indexOf(magicNumber) === -1) {

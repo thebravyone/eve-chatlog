@@ -1,10 +1,10 @@
 {
-  "name": "eve-chat-log",
-  "version": "1.0.0",
+  "name": "eve-chatlog",
+  "version": "1.0.1",
   "description": "EVE Online Chatlog (*.txt) parser",
   "main": "index.js",
   "scripts": {
-    "test": "ava"
+    "test": "xo && ava"
   },
   "keywords": [
     "eve",
@@ -15,6 +15,14 @@
     "parser"
   ],
   "author": "thebravyone",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/thebravyone/eve-chat-log.git"
+	},
+	"bugs": {
+		"url": "https://github.com/thebravyone/eve-chat-log/issues"
+	},
+	"homepage": "https://github.com/thebravyone/eve-chat-log#readme",
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.19.1",

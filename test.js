@@ -8,8 +8,12 @@ test('input', t => {
 	const errArray = t.throws(() => {
 		m(['a', 'b']);
 	}, TypeError);
+	const errOffset = t.throws(() => {
+		m('./fixtures/mn_true.txt', {offset: '2'});
+	}, TypeError);
 	t.is(errNum.message, 'Expected a string, got number');
 	t.is(errArray.message, 'Expected a string, got object');
+	t.is(errOffset.message, 'Expected offset as integer, got string');
 });
 
 test('magic number', t => {
@@ -18,6 +22,13 @@ test('magic number', t => {
 	}, TypeError);
 	t.is(err.message, 'Invalid file format');
 	t.truthy(m('./fixtures/mn_true.txt'));
+});
+
+test('filename', t => {
+	const err = t.throws(() => {
+		m('./fixtures/1');
+	}, TypeError);
+	t.true(err.message.includes('ENOENT: no such file or directory'));
 });
 
 test('local', t => {
