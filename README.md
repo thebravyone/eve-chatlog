@@ -1,4 +1,4 @@
-# eve-chatlog
+# eve-chatlog [![Build Status](https://travis-ci.org/thebravyone/eve-chat-log.svg?branch=master)](https://travis-ci.org/thebravyone/eve-chat-log)
 > EVE Online Chatlog (txt) parser
 
 ## Install
