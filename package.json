@@ -1,0 +1,27 @@
+{
+  "name": "eve-chat-log",
+  "version": "1.0.0",
+  "description": "EVE Online Chatlog (*.txt) parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [
+    "eve",
+    "online",
+    "chat",
+    "log",
+    "chatlog",
+    "parser"
+  ],
+  "author": "thebravyone",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "xo": "^0.18.2"
+  },
+  "dependencies": {
+    "camel-case": "^3.0.0",
+    "moment": "^2.18.1"
+  }
+}
