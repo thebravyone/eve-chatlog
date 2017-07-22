@@ -38,3 +38,9 @@ test('local', t => {
 	t.is(chat.header.listener, 'CCP');
 	t.is(chat.messages.length, 5);
 });
+
+test('special-chars', t => {
+	const chat = m('./fixtures/extra-char.txt');
+	t.is(chat.messages[3].text, 'Message 1 > Message 2.');
+	t.is(chat.messages[4].text, 'another timestamp [ 2017.07.11 20:27:57 ].');
+});

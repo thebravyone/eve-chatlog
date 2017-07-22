@@ -1,10 +1,10 @@
 {
   "name": "eve-chatlog",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "EVE Online Chatlog (*.txt) parser",
   "main": "index.js",
   "scripts": {
-    "test": "xo && ava"
+    "test": "ava"
   },
   "keywords": [
     "eve",
@@ -15,14 +15,14 @@
     "parser"
   ],
   "author": "thebravyone",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/thebravyone/eve-chat-log.git"
-	},
-	"bugs": {
-		"url": "https://github.com/thebravyone/eve-chat-log/issues"
-	},
-	"homepage": "https://github.com/thebravyone/eve-chat-log#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebravyone/eve-chat-log.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thebravyone/eve-chat-log/issues"
+  },
+  "homepage": "https://github.com/thebravyone/eve-chat-log#readme",
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.19.1",
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "camel-case": "^3.0.0",
+    "extract-values": "^0.1.2",
     "moment": "^2.18.1"
   }
 }

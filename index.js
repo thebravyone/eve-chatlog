@@ -48,12 +48,12 @@ module.exports = (filename, opts) => {
 		const parsed = [];
 		for (let i = 0; i < textArray.length; i++) {
 			if (textArray[i] !== '') {
-				const entry = textArray[i].split(/[[\]>]+/);
-				if (entry.length === 4) {
+				const message = textArray[i].slice(24).split(/>(.+)/);
+				if (message.length > 1) {
 					parsed.push({
-						timestamp: moment.utc(entry[1].trim(), 'YYYY.MM.DD HH:mm:ss').format(),
-						sender: entry[2].trim(),
-						text: entry[3].trim()
+						timestamp: moment.utc(textArray[i].slice(0, 23).replace(/[[\]]./, '').trim(), 'YYYY.MM.DD HH:mm:ss').format(),
+						sender: message[0].trim(),
+						text: message[1].trim()
 					});
 				}
 			}
